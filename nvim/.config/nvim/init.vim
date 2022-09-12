@@ -7,4 +7,3 @@ set smarttab
 set softtabstop=4
 set encoding=UTF-8
 
-colorscheme jellybeans
