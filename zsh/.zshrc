@@ -1,10 +1,19 @@
-eval "$(ssh-agent -s)"
-ssh-add ./.ssh/github_key
+# SSH
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
+
+ssh-add ./.ssh/github_key 
 clear
 
+# exports
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$PATH:$HOME/google-cloud-sdk/bin:$PATH
 source /opt/asdf-vm/asdf.sh
 
+# keymaps
 setxkbmap -layout us,br -option grp:alt_shift_toggle
 
 # >>> conda initialize >>>
@@ -28,3 +37,5 @@ if [ -f '/home/joaopedropsilva/google-cloud-sdk/path.zsh.inc' ]; then . '/home/j
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc'; fi
+
+
