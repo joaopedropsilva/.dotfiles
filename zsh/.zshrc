@@ -18,14 +18,14 @@ setxkbmap -layout us,br -option grp:alt_shift_toggle
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/joaopedropsilva/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/joaopedropsilva/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/joaopedropsilva/.miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/joaopedropsilva/.miniconda3/bin:$PATH"
+        export PATH="/opt/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -39,3 +39,4 @@ if [ -f '/home/joaopedropsilva/google-cloud-sdk/path.zsh.inc' ]; then . '/home/j
 if [ -f '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+alias docker-postgres="docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres"
