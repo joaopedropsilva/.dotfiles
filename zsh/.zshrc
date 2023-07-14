@@ -10,8 +10,8 @@ ssh-add ./.ssh/github_key
 clear
 
 # exports
-export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$PATH:$HOME/google-cloud-sdk/bin:$PATH
-source /opt/asdf-vm/asdf.sh
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$HOME/google-cloud-sdk/bin:/usr/local/go/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
 
 # keymaps
 setxkbmap -layout us,br -option grp:alt_shift_toggle
@@ -38,5 +38,19 @@ if [ -f '/home/joaopedropsilva/google-cloud-sdk/path.zsh.inc' ]; then . '/home/j
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/joaopedropsilva/google-cloud-sdk/completion.zsh.inc'; fi
 
+bindkey -s ^f "tmux-sessionizer\n"
 
-alias docker-postgres="docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres"
+# Aliases
+alias susp="systemctl suspend"
+alias bluet="bluetoothctl"
+alias vim="nvim"
+alias build="docker build . -t ansible"
+alias run="docker run --rm -it ansible bash"
+
+# Oh My Zsh
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+source /opt/asdf-vm/asdf.sh
+source /usr/share/nvm/init-nvm.sh
