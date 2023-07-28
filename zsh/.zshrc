@@ -1,5 +1,5 @@
 # exports
-export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$HOME/.gcloud/google-cloud-sdk/bin:/usr/local/go/bin:$PATH
+export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$HOME/.gcloud/google-cloud-sdk/bin:/usr/local/go/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 # Binds
