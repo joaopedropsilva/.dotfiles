@@ -1,0 +1,13 @@
+- name: nvim >> Creating .neovim directory
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.config/.neovim"
+    state: directory
+    mode: "0755"
+      
+- name: nvim >> Downloading nvim stable release
+  ansible.builtin.unarchive:
+    src: "https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz"
+    dest: "/home/{{ username }}/.config/.neovim"
+    remote_src: yes
+
+

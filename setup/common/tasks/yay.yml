@@ -1,0 +1,12 @@
+- name: yay >> Cloning yay.git
+  become: yes
+  become_user: "{{ username }}"
+  ansible.builtin.git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: /tmp/yay
+
+- name: yay >> Installing yay
+  become: yes
+  become_user: "{{ username }}"
+  shell: "cd /tmp/yay && makepkg -si --noconfirm --noprogressbar"
+

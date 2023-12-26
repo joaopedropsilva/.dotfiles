@@ -1,0 +1,28 @@
+- include_tasks: ssh.yml
+  when: setup_ssh == True
+
+- include_tasks: core.yml
+
+- include_tasks: nvim.yml
+
+- include_tasks: yay.yml
+  when: install_yay == True
+
+- include_tasks: zsh.yml
+  when: setup_zsh == True
+
+- include_tasks: nodejs.yml
+  when: install_node == True
+
+- include_tasks: npm.yml
+  when: install_node == True
+
+- include_tasks: "{{ browser }}.yml"
+  when: install_web_browser == True
+
+- include_tasks: office.yml
+  when: install_office == True
+
+- include_tasks: dotfiles.yml
+  when: pull_dotfiles == True
+

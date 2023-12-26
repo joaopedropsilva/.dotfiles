@@ -1,0 +1,30 @@
+- name: dotfiles >> Checking if dotfiles exists
+  stat:
+    path: "/home/{{ username }}/.dotfiles"
+  register: dotfiles
+
+- name: dotfiles >> Cloning user dotfiles
+  become: yes
+  become_user: "{{ username }}"
+  ansible.builtin.git:
+    repo: "{{ dotfiles_url }}"
+    dest: "/home/{{ username }}/.dotfiles"
+    accept_hostkey: true
+  when: dotfiles.stat.exists == False
+
+- name: dotfiles >> Setting SSH url to dotfiles origin
+  shell: "git remote set-url origin git@github.com:{{ username }}/.dotfiles.git"
+  args:
+    chdir: "/home/{{ username }}/.dotfiles"
+
+- name: dotfiles >> Getting Packer neovim plugin manager
+  become: yes
+  become_user: "{{ username }}"
+  ansible.builtin.git:
+    repo: "https://github.com/wbthomason/packer.nvim"
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
+- name: dotfiles >> Stowing user dotfiles
+  become: yes
+  become_user: "{{ username }}"
+  shell: "cd /home/{{ username }}/.dotfiles && stow */"

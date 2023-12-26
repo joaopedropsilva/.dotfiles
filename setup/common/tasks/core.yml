@@ -1,0 +1,37 @@
+- name: services >> Installing docker, docker-compose 
+  ansible.builtin.package:
+    name:
+      - docker
+      - docker-compose
+    state: present
+
+- name: essentials >> Installing git, stow, tmux 
+  ansible.builtin.package:
+    name:
+      - git
+      - stow
+      - tmux
+    state: present
+
+- name: utils >> Installing curl, fzf, httpie, ripgrep, neofetch, xclip, tldr, man-db 
+  ansible.builtin.package:
+    name:
+      - curl
+      - fzf
+      - httpie
+      - ripgrep
+      - neofetch
+      - xclip
+      - tldr
+      - man-db
+    state: present
+
+- name: archival utils >> Installing zip, unzip, unrar, gzip, tar
+  ansible.builtin.package:
+    name:
+      - zip
+      - unzip
+      - unrar
+      - gzip
+      - tar
+    state: present

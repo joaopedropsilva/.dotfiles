@@ -1,0 +1,23 @@
+- name: nodejs >> Installing nodejs and npm
+  become: yes
+  ansible.builtin.package:
+    name: ["nodejs", "npm"]
+    state: present
+
+- name: nodejs >> Creating npm global prefix
+  ansible.builtin.file:
+    path: "/home/{{ username }}/.local/.npm-global"
+    state: directory
+    mode: "0755"
+
+- name: nodejs >> Setting npm global prefix
+  shell: "npm config set prefix /home/{{ username }}/.local/.npm-global"
+
+- name: nodejs >> Installing N (Node Version Manager)
+  npm:
+    name: n
+    global: yes
+
+- name: nodejs >> Installing node 18
+  shell: "/home/{{ username }}/.local/.npm-global/bin/n 18"
+

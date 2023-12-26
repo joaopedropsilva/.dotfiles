@@ -1,0 +1,22 @@
+- name: zsh >> Installing zsh
+  ansible.builtin.package:
+    name:
+      - zsh
+    state: present
+
+- name: zsh >> Changing "{{ username }}'s shell to zsh"
+  become: yes
+  user:
+    name: "{{ username }}"
+    shell: /usr/bin/zsh
+
+- name: zsh >> Checking Oh-My-Zsh status
+  stat:
+    path: "/home/{{ username }}/.oh-my-zsh"
+  register: oh_my_stats
+
+- name: zsh >> Installing Oh-My-Zsh
+  become: yes
+  become_user: "{{ username }}"
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  when: oh_my_stats.stat.exists == False

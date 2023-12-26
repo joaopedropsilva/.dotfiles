@@ -1,0 +1,24 @@
+- name: npm >> Installing Yarn
+  npm:
+    name: yarn
+    global: yes
+
+- name: npm >> Installing eslint
+  npm:
+    name: eslint
+    global: yes
+
+- name: npm >> Installing Typescript server
+  npm:
+    name: typescript-language-server
+    global: yes
+
+- name: npm >> Installing Typescript
+  npm:
+    name: typescript
+    global: yes
+
+- name: npm >> Installing TS-Node
+  npm:
+    name: ts-node
+    global: yes
