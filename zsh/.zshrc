@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 bindkey -s ^f "tmux-sessionizer\n"
 
 # Aliases
-alias vim="nvim"
+#alias vim="nvim"
 
 # Oh My Zsh
 ZSH_THEME="robbyrussell"
