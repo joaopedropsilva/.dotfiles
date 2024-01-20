@@ -14,10 +14,6 @@ dest_key_file: "/home/{{ username }}/.ssh/id_ed25519"
 # Node JS
 install_node: True
 
-# Dotfiles
-pull_dotfiles: True
-dotfiles_url: https://github.com/joaopedropsilva/.dotfiles.git
-
 # Web Browser
 # Value can be: brave or chromium
 install_web_browser: False

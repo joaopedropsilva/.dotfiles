@@ -23,6 +23,3 @@
 - include_tasks: office.yml
   when: install_office == True
 
-- include_tasks: dotfiles.yml
-  when: pull_dotfiles == True
-
