@@ -7,6 +7,9 @@ username: joaopedropsilva
 source_key_file: "{{ role_path }}/files/ssh/id_ed25519"
 dest_key_file: "/home/{{ username }}/.ssh/id_ed25519"
 
+# nvim
+setup_nvim: False
+
 # zsh
 setup_zsh: True
 

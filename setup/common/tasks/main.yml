@@ -3,6 +3,7 @@
 - include_tasks: core.yml
 
 - include_tasks: nvim.yml
+  when: setup_nvim == True
 
 - include_tasks: yay.yml
   when: install_yay == True
