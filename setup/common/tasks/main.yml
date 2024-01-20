@@ -1,5 +1,4 @@
 - include_tasks: ssh.yml
-  when: setup_ssh == True
 
 - include_tasks: core.yml
 

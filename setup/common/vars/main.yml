@@ -3,23 +3,21 @@
 # user info
 username: joaopedropsilva
 
-# zsh
-setup_zsh: True
-
 # ssh
-setup_ssh: True
 source_key_file: "{{ role_path }}/files/ssh/id_ed25519"
 dest_key_file: "/home/{{ username }}/.ssh/id_ed25519"
+
+# zsh
+setup_zsh: True
 
 # node js
 install_node: False
 
-# web browser
-# Value can be: brave or chromium
+# web browser (brave or chromium)
 install_web_browser: False
 browser: brave
 
-# installs libre office fresh when true
+# libre office fresh
 install_office: False
 
 # yay
