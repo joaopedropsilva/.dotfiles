@@ -18,6 +18,9 @@
 - name: zsh >> Installing Oh-My-Zsh
   become: yes
   become_user: "{{ username }}"
-  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh \
+    > ~/.oh-my-installer \
+    && chmod +x ~/.oh-my-installer \
+    && ~/.oh-my-installer
   when: oh_my_stats.stat.exists == False
 
