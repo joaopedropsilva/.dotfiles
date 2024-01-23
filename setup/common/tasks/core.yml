@@ -1,3 +1,10 @@
+- name: tooling >> Installing base, base-devel
+  ansible.builtin.package:
+    name:
+      - base
+      - base-devel
+    state: present
+
 - name: services >> Installing docker, docker-compose 
   ansible.builtin.package:
     name:
