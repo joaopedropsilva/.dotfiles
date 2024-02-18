@@ -1,19 +1,19 @@
-- name: ssh >> Ensuring .ssh directory exists.
-  file:
-    dest: "{{ dest_key_file | dirname }}"
+- name: homedirs >> Creating $HOME/.ssh/
+  ansible.builtin.file:
+    dest: "{{ homedir }}/.ssh"
     mode: 0700
     owner: "{{ username }}"
     state: directory
 
-- name: ssh >> Installing private member of ssh key
-  copy:
+- name: homedirs >> Installing private member of ssh key
+  ansible.builtin.copy:
     src: "{{ source_key_file }}"
     dest: "{{ dest_key_file }}"
     mode: 0600
     owner: "{{ username }}"
 
-- name: ssh >> Installing public member of ssh key
-  copy:
+- name: homedirs >> Installing public member of ssh key
+  ansible.builtin.copy:
     src: "{{ source_key_file }}.pub"
     dest: "{{ dest_key_file }}.pub"
     mode: 0644

@@ -1,0 +1,18 @@
+- name: homedirs >> Creating $HOME/.local/
+  ansible.builtin.file:
+    dest: "{{ homedir }}/.local"
+    mode: 0755
+    owner: "{{ username }}"
+    state: directory
+
+- name: homedirs >> Creating $HOME/.config/
+  ansible.builtin.file:
+    dest: "{{ homedir }}/.config"
+    mode: 0754
+    owner: "{{ username }}"
+    state: directory
+
+- name: stow >> Stow packages into $HOME
+  ansible.builtin.shell:
+    "cd {{ homedir }}/.dotfiles/packages && stow -t {{ homedir }} */"
+

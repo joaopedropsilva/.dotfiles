@@ -1,6 +1,8 @@
+- include_tasks: core.yml
+
 - include_tasks: ssh.yml
 
-- include_tasks: core.yml
+- include_tasks: stow.yml
 
 - include_tasks: nvim.yml
   when: setup_nvim == True

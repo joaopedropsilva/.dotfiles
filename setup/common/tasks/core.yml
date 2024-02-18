@@ -1,18 +1,18 @@
-- name: tooling >> Installing base, base-devel
+- name: core >> Installing base, base-devel
   ansible.builtin.package:
     name:
       - base
       - base-devel
     state: present
 
-- name: services >> Installing docker, docker-compose 
+- name: core >> Installing docker, docker-compose 
   ansible.builtin.package:
     name:
       - docker
       - docker-compose
     state: present
 
-- name: essentials >> Installing git, stow, tmux 
+- name: core >> Installing git, stow, tmux 
   ansible.builtin.package:
     name:
       - git
@@ -20,7 +20,7 @@
       - tmux
     state: present
 
-- name: utils >> Installing curl, fzf, httpie, ripgrep, neofetch, xclip, tldr, man-db 
+- name: core >> Installing curl, fzf, httpie, ripgrep, neofetch, xclip, tldr, man-db 
   ansible.builtin.package:
     name:
       - curl
@@ -33,7 +33,7 @@
       - man-db
     state: present
 
-- name: archival utils >> Installing zip, unzip, unrar, gzip, tar
+- name: core >> Installing zip, unzip, unrar, gzip, tar
   ansible.builtin.package:
     name:
       - zip
