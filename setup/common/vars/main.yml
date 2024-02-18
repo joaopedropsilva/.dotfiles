@@ -14,7 +14,8 @@ setup_nvim: False
 setup_zsh: True
 
 # node js
-install_node: False
+install_node: True
+install_npm_globals: True
 
 # web browser (brave or chromium)
 install_web_browser: False

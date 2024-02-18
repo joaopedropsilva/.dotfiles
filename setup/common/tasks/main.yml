@@ -14,8 +14,8 @@
 - include_tasks: nodejs.yml
   when: install_node == True
 
-- include_tasks: npm.yml
-  when: install_node == True
+- include_tasks: npm-globals.yml
+  when: install_npm_globals == True
 
 - include_tasks: "{{ browser }}.yml"
   when: install_web_browser == True
