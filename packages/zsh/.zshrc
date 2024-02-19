@@ -1,7 +1,7 @@
 # exports
 export ZSH=$HOME/.oh-my-zsh
 export N_PREFIX=$HOME/.local/.n
-export PATH=$HOME/.config/.neovim/nvim-linux64/bin:$HOME/.local/.npm-global/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.miniconda3/bin:$HOME/.gcloud/google-cloud-sdk/bin:/usr/local/go/bin:$N_PREFIX/bin:$PATH
+export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$HOME/.miniconda3/bin:$HOME/.gcloud/google-cloud-sdk/bin:/usr/local/go/bin:$N_PREFIX/bin:$PATH
 
 # Binds
 bindkey -s ^f "tmux-sessionizer\n"
