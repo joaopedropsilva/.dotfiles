@@ -4,7 +4,7 @@ export N_PREFIX=$HOME/.local/.n
 export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$HOME/.miniconda3/bin:$HOME/.gcloud/google-cloud-sdk/bin:/usr/local/go/bin:$N_PREFIX/bin:$PATH
 
 # Binds
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^f "tmux-sessionizer.sh\n"
 
 # Aliases
 #alias vim="nvim"
