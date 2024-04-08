@@ -8,6 +8,8 @@ bindkey -s ^f "tmux-sessionizer.sh\n"
 
 # Aliases
 #alias vim="nvim"
+alias flashcards-up="docker run -d -p 8000:8000 --name cs-flash-cards -v /home/repos/computer-science-flashcards/db:/src/db cs-flash-cards"
+alias flashcards-down="docker rm -f cs-flash-cards"
 
 # Oh My Zsh
 ZSH_THEME="robbyrussell"
