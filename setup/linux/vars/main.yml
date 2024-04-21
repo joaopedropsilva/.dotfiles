@@ -12,7 +12,7 @@ dest_key_file: "/home/{{ username }}/.ssh/id_ed25519"
 setup_nvim: False
 
 # zsh
-setup_zsh: True
+setup_zsh: False
 
 # node js
 install_node: True
