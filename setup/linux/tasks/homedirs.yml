@@ -12,7 +12,7 @@
     owner: "{{ username }}"
     state: directory
 
-- name: stow >> Stow packages into $HOME
+- name: homedirs >> Stow packages into $HOME
   ansible.builtin.shell:
     "cd {{ homedir }}/.dotfiles/packages && stow -t {{ homedir }} */"
 

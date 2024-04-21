@@ -1,4 +1,5 @@
 - name: core >> Installing base, base-devel
+  become: yes
   ansible.builtin.package:
     name:
       - base
@@ -6,6 +7,7 @@
     state: present
 
 - name: core >> Installing docker, docker-compose 
+  become: yes
   ansible.builtin.package:
     name:
       - docker
@@ -13,6 +15,7 @@
     state: present
 
 - name: core >> Installing git, stow, tmux 
+  become: yes
   ansible.builtin.package:
     name:
       - git
@@ -21,6 +24,7 @@
     state: present
 
 - name: core >> Installing curl, fzf, httpie, ripgrep, neofetch, xclip, tldr, man-db 
+  become: yes
   ansible.builtin.package:
     name:
       - curl
@@ -34,6 +38,7 @@
     state: present
 
 - name: core >> Installing zip, unzip, unrar, gzip, tar
+  become: yes
   ansible.builtin.package:
     name:
       - zip
