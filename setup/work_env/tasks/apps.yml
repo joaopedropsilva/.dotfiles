@@ -1,0 +1,26 @@
+- name: apps >> Installing core packages
+  become: yes
+  ansible.builtin.package:
+    name:
+      - git
+      - stow
+      - tmux
+      - base
+      - base-devel
+      - docker
+      - docker-compose
+      - curl
+      - fzf
+      - httpie
+      - ripgrep
+      - neofetch
+      - xclip
+      - tldr
+      - man-db
+      - zip
+      - unzip
+      - unrar
+      - gzip
+      - tar
+    state: present
+

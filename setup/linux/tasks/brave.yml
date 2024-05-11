@@ -1,6 +1,0 @@
-- name: brave >> Installing browser
-  community.general.pacman:
-   name: 
-    - brave
-   state: present 
-

@@ -1,0 +1,15 @@
+- name: browser >> Installing Brave
+  community.general.pacman:
+   name: 
+    - brave
+   state: present 
+   
+- name: browser >> Installing Chromium
+  community.general.pacman:
+   name: 
+    - chromium
+   state: present 
+
+
+
+

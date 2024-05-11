@@ -1,6 +1,0 @@
-- name: chromium >> Installing browser
-  community.general.pacman:
-   name: 
-    - chromium
-   state: present 
-

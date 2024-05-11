@@ -1,0 +1,38 @@
+- name: nodejs_npm >> Installing npm
+  become: yes
+  ansible.builtin.package:
+    name: npm
+    state: present
+
+- name: nodejs_npm >> Creating npm global prefix
+  ansible.builtin.file:
+    path: "{{ homedir }}/.local/.npm-global"
+    state: directory
+    mode: 0755
+
+- name: nodejs_npm >> Setting npm global prefix
+  shell: "npm config set prefix {{ homedir }}/.local/.npm-global"
+
+- name: nodejs_npm >> Installing N (Node Version Manager)
+  community.general.npm:
+    name: n
+    global: yes
+
+- name: nodejs_npm >> Installing node lts
+  shell: "{{ homedir }}/.local/.npm-global/bin/n lts"
+
+- name: nodejs_npm >> Installing Yarn
+  community.general.npm:
+    name: yarn
+    global: yes
+
+- name: nodejs_npm >> Installing Typescript
+  community.general.npm:
+    name: typescript
+    global: yes
+
+- name: nodejs_npm >> Installing TS-Node
+  community.general.npm:
+    name: ts-node
+    global: yes
+
