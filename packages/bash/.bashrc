@@ -8,6 +8,7 @@
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias crepl='create_repertory_log.sh'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
