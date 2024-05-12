@@ -7,6 +7,7 @@
       - tmux
       - base
       - base-devel
+      - i3
       - docker
       - docker-compose
       - curl
