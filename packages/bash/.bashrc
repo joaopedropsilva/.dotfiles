@@ -9,6 +9,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias crepl='create_repertory_log.sh'
+alias susp='systemctl suspend'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
