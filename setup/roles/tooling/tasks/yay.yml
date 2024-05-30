@@ -2,8 +2,8 @@
   become: yes
   become_user: "{{ username }}"
   ansible.builtin.git:
-    repo: https://aur.archlinux.org/yay.git
-    dest: /tmp/yay
+    repo: "https://aur.archlinux.org/yay.git"
+    dest: "/tmp/yay"
 
 - name: yay >> Installing yay
   become: yes

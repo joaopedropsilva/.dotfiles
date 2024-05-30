@@ -1,6 +1,5 @@
-FROM greyltc/archlinux
-ARG TAGS
+FROM archlinux
 WORKDIR /usr/local/bin
-RUN pacman -Syu --noconfirm && pacman -S ansible sudo vi --noconfirm
+RUN pacman -Syyuu --noconfirm && pacman -S ansible sudo vim --noconfirm
 COPY . .
 

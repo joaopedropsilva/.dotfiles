@@ -1,4 +1,4 @@
-- name: apps >> Installing core packages
+- name: packages >> Installing core packages
   become: yes
   ansible.builtin.package:
     name:

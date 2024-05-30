@@ -1,0 +1,5 @@
+- name: "Tooling setup"
+  hosts: localhost
+  roles:
+    - tooling
+

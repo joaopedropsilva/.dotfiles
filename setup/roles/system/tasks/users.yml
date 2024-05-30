@@ -1,0 +1,13 @@
+- name: users >> Creating docker group
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: "users >> Creating user {{ username }}"
+  ansible.builtin.user:
+    name: "{{ username }}"
+    shell: /bin/bash
+    groups: wheel,docker
+    create_home: true
+  when: create_user == True
+

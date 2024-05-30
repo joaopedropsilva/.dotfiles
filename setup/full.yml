@@ -1,0 +1,6 @@
+- name: "Full setup"
+  hosts: localhost
+  roles:
+    - system
+    - tooling
+
