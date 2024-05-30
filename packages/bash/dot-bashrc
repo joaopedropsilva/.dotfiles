@@ -10,7 +10,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias crepl='create_repertory_log.sh'
 alias susp='systemctl suspend'
-alias test_ansible='docker run --name=arch_ansible -it arch_ansible bash'
+alias test_ansible='docker rm -f arch_ansible ; docker run --name=arch_ansible -it arch_ansible bash'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
