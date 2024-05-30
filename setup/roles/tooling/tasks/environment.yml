@@ -26,3 +26,22 @@
 - name: environment >> Stow packages into $HOME
   ansible.builtin.shell: "cd {{ homedir }}/.dotfiles/packages && stow --adopt --dotfiles -t {{ homedir }} */"
 
+- name: environment >> Creating /usr/local/share/fonts if not exists
+  become: yes
+  ansible.builtin.file:
+    path: /usr/local/share/fonts
+    mode: 0755
+    owner: root
+    state: directory
+
+- name: environment >> Copying fonts from .dotfiles
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ homedir }}/.dotfiles/fonts"
+    dest: /usr/local/share/fonts
+    mode: 0755
+    owner: root
+
+- name: environment >> Updating font cache
+  ansible.builtin.command: fc-cache -f 
+

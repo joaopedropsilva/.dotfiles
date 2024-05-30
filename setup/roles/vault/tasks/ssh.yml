@@ -1,6 +1,6 @@
 - name: ssh >> Creating $HOME/.ssh/
   ansible.builtin.file:
-    dest: "{{ homedir }}/.ssh"
+    path: "{{ homedir }}/.ssh"
     mode: 0700
     owner: "{{ username }}"
     state: directory

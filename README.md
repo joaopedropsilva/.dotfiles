@@ -3,11 +3,12 @@
 ## TODO
 
 ## Ansible
-- Add fonts setup to system role
+- Vault setup
 - yay.yml with msedge setup
+- Write tooling_only script
+- Add information to README
 
 ## Scripts
-- Create .todo script
 - Create bluetoothctl script
 - Fix tmux_cht.sh is broken, nothing is displayed after search 
 - Deprecate objects dir
@@ -16,6 +17,5 @@
 - neovim
 - Search for display brightness control
     https://wiki.archlinux.org/title/laptop
-- Cron job to save rj notes to github periodically
 - Touchpad driver check
 
