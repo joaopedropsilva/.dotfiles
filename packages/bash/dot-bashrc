@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias crepl='create_repertory_log.sh'
 alias susp='systemctl suspend'
+alias test_ansible='docker run --name=arch_ansible -it arch_ansible bash'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
@@ -25,5 +26,4 @@ export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$N_PREFIX/bin:$PAT
 
 # Binds
 bind -x '"\C-f":"tmux_sessionizer.sh"'
-bind -x '"\C-t":"access_fast_log.sh"'
 
