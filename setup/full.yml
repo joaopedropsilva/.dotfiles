@@ -3,4 +3,5 @@
   roles:
     - system
     - tooling
+    - vault
 
