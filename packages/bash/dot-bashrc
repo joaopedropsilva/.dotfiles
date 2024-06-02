@@ -26,4 +26,5 @@ export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$N_PREFIX/bin:$PAT
 
 # Binds
 bind -x '"\C-f":"tmux_sessionizer.sh"'
+bind -x '"\C-t":"switch_actions.sh"'
 

@@ -1,14 +1,16 @@
 #! /usr/bin/bash
 
-VIM=$(which vim)
 SCRIPTS_PATH=$HOME/.local/scripts
+HANDLERS_PATH="$SCRIPTS_PATH/handlers"
 ACTIONS=$(cat "$SCRIPTS_PATH/actions")
 
-readarray -t OBJECTS < <(ls "$SCRIPTS_PATH/objects")
+selected_action_string=($(echo "$ACTIONS" | fzf))
+handler=$(echo "${selected_action_string[0]}" | sed 's/\[\(.*\)\]/\1/')
 
-selected=($(echo "$ACTIONS" | fzf))
-action="${selected[0]}"
-object="${selected[${#selected[@]} - 1]}"
+if [ "$handler" = '' ]; then
+    exit 1
+fi
 
-# switch case to call objects scripts
-# pass qualfier to those scripts
+$HANDLERS_PATH/"$handler.sh" "${selected_action_string[@]:1}"
+
+
