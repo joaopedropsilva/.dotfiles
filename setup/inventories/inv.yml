@@ -5,4 +5,6 @@ local:
       create_user: True
       username: joaopedropsilva
       homedir: "/home/{{ username }}"
+      ssh_key: id_ed25519
+      ssh_key_file_path: "{{ homedir }}/.vault/{{ ssh_key }}"
 

@@ -1,0 +1,19 @@
+- name: fonts >> Creating /usr/local/share/fonts if not exists
+  become: yes
+  ansible.builtin.file:
+    path: /usr/local/share/fonts
+    mode: 0755
+    owner: root
+    state: directory
+
+- name: fonts >> Copying fonts from .dotfiles
+  become: yes
+  ansible.builtin.copy:
+    src: "{{ homedir }}/.dotfiles/fonts/ttf"
+    dest: /usr/local/share/fonts
+    mode: 0755
+    owner: root
+
+- name: fonts >> Updating font cache
+  ansible.builtin.command: fc-cache -f 
+

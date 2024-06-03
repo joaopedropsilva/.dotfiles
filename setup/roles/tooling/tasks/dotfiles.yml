@@ -1,0 +1,14 @@
+- name: dotfiles >> Checking for .dotfiles in $HOME 
+  ansible.builtin.stat:
+    path: "{{ homedir }}/.dotfiles"
+  register: dotfiles
+
+- name: dotfiles >> Cloning .dotfiles if not exists
+  ansible.builtin.git:
+    repo: "https://github.com/joaopedropsilva/.dotfiles.git"
+    dest: "{{ homedir }}/.dotfiles"
+  when: dotfiles.stat.exists == False
+
+- name: dotfiles >> Stowing packages into $HOME
+  ansible.builtin.shell: "cd {{ homedir }}/.dotfiles/packages && stow --adopt --dotfiles -t {{ homedir }} */"
+

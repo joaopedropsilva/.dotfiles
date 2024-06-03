@@ -1,0 +1,14 @@
+- name: ssh >> Copying private member of ssh key
+  ansible.builtin.copy:
+    src: "{{ ssh_key_file_path }}"
+    dest: "{{ homedir }}/.ssh/{{ ssh_key }}"
+    mode: 0600
+    owner: "{{ username }}"
+
+- name: ssh >> Copying public member of ssh key
+  ansible.builtin.copy:
+    src: "{{ ssh_key_file_path }}.pub"
+    dest: "{{ homedir }}/.ssh/{{ ssh_key }}.pub"
+    mode: 0644
+    owner: "{{ username }}"
+

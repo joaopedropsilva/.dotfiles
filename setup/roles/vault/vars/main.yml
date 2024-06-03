@@ -1,3 +1,0 @@
-source_key_file: "{{ role_path }}/files/ssh/id_ed25519"
-dest_key_file: "{{ homedir }}/.ssh/id_ed25519"
-
