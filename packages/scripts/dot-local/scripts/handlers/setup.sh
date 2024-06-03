@@ -23,7 +23,7 @@ launch_test_env() {
 }
 
 if [ "$1" = 'Run' ]; then
-    $ANSIBLE_PLAYBOOK -i $SETUP_PATH/inventories/inv.yml $SETUP_PATH/tooling_only.yml --ask-become-pass
+    $SETUP_PATH/run.sh tooling_only
 elif [ "$1" = 'Rebuild' ]; then
     rebuild_test_env
 elif [ "$1" = 'Launch' ]; then
