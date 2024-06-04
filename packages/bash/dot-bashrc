@@ -9,6 +9,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias susp='systemctl suspend'
+alias avv='ansible-vault view'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
