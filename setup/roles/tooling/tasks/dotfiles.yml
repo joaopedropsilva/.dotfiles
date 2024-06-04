@@ -4,6 +4,8 @@
   register: dotfiles
 
 - name: dotfiles >> Cloning .dotfiles if not exists
+  become: yes
+  become_user: "{{ username }}"
   ansible.builtin.git:
     repo: "https://github.com/joaopedropsilva/.dotfiles.git"
     dest: "{{ homedir }}/.dotfiles"

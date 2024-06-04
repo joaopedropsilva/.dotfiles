@@ -10,6 +10,7 @@
 - Refactor scripts
 
 ## Other
+- Add ansible-vault decrypt alias or script
 - neovim
 - Search for display brightness control
     https://wiki.archlinux.org/title/laptop
