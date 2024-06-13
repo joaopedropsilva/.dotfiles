@@ -11,11 +11,6 @@
 
 ## Other
 - neovim
-    - LSP config
-    - Telescope
-    - Treesitter
-    - Trouble
-    - Harpoon
 - Search for display brightness control
     https://wiki.archlinux.org/title/laptop
 - Touchpad driver check
