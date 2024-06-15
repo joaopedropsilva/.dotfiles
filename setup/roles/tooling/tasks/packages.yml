@@ -12,6 +12,7 @@
       - docker-compose
       - curl
       - fzf
+      - scrot
       - httpie
       - ripgrep
       - neofetch
