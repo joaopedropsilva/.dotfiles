@@ -18,7 +18,7 @@
       - ripgrep
       - neofetch
       - neovim
-      - python-passlib
+      - openssh
       - rust
       - xclip
       - tldr
