@@ -8,12 +8,12 @@
       - tmux
       - base
       - base-devel
-      - i3
       - docker
       - docker-compose
       - curl
       - fzf
       - scrot
+      - mono
       - httpie
       - ripgrep
       - neofetch
