@@ -3,6 +3,7 @@
   ansible.builtin.package:
     name:
       - git
+      - github-cli
       - stow
       - tmux
       - base
