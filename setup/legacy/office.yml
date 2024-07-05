@@ -1,6 +1,0 @@
-- name: office >> Installing LibreOffice Fresh (EN)
-  community.general.pacman:
-   name: 
-    - libreoffice-fresh
-   state: present 
-
