@@ -10,7 +10,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias susp='systemctl suspend'
 alias avv='ansible-vault view'
-alias sc='scrot --select'
 
 # Prompt styling
 DEFAULT_PS1='[\u@\h \W]\$ '
@@ -23,6 +22,7 @@ PS1="$STYLING$FG_COLOR$PROMPT$RESET_STYLING"
 # Exports
 export N_PREFIX=$HOME/.local/.n
 export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$N_PREFIX/bin:$PATH
+export EDITOR=$(which nvim)
 
 # Binds
 bind -x '"\C-f":"tmux_sessionizer.sh"'
