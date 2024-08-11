@@ -12,13 +12,6 @@
     owner: "{{ username }}"
     state: directory
 
-- name: homedirs >> Creating $HOME/.vault/
-  ansible.builtin.file:
-    dest: "{{ homedir }}/.vault"
-    mode: 0700
-    owner: "{{ username }}"
-    state: directory
-
 - name: homedirs >> Creating $HOME/.ssh/
   ansible.builtin.file:
     path: "{{ homedir }}/.ssh"

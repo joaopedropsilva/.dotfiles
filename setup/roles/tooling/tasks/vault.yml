@@ -1,0 +1,13 @@
+- name: vault >> Checking for .vault in $HOME 
+  ansible.builtin.stat:
+    path: "{{ homedir }}/.vault"
+  register: vault
+
+- name: vault >> Cloning .vault if not exists
+  become: yes
+  become_user: "{{ username }}"
+  ansible.builtin.git:
+    repo: "https://github.com/joaopedropsilva/.vault.git"
+    dest: "{{ homedir }}/.vault"
+  when: vault.stat.exists == False
+
