@@ -1,16 +1,14 @@
 #! /usr/bin/bash
 
-ZET=~/zet
+ZET=~/t
+VIM=$(which nvim || which vim)
 
-echo "Backing up zet..."
+get_filename() {
+    echo "Enter filename: "
+    read filename
 
-cd $ZET 
+}
 
-git add -A
-git commit -m "Automatic backup commit $(date '+%Y-%m-%d %H:%M:%S')"
-git push
-
-echo "Backup complete!"
-
-cd - > /dev/null
+cd $ZET \
+    && $VIM "./$(date '+%Y%m%d%H%M%S')" 
 
