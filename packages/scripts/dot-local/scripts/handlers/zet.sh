@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-ZET=~/new
+ZET=~/zet
 VIM=$(which nvim || which vim)
 
 get_filename() {
