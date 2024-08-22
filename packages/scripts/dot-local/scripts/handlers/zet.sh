@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-ZET=~/t
+ZET=~/new
 VIM=$(which nvim || which vim)
 
 get_filename() {
@@ -10,5 +10,6 @@ get_filename() {
 }
 
 cd $ZET \
-    && $VIM "./$(date '+%Y%m%d%H%M%S')" 
+    && $VIM "./$(date '+%Y%m%d%H%M%S').md" \
+    && cd - > /dev/null
 
