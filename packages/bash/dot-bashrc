@@ -12,6 +12,7 @@ alias susp='systemctl suspend'
 alias avv='ansible-vault view'
 
 # Prompt styling
+# Space after definition might be trouble
 DEFAULT_PS1='[\u@\h \W]\$ '
 STYLING='\e[1m'
 FG_COLOR='\e[32m'
