@@ -1,18 +1,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-DEFAULT_PS1='[\u@\h \W]\$ '
-STYLING='\e[1m'
-FG_COLOR='\e[32m'
-RESET_STYLING='\e[0m'
-PROMPT='[\W]\$ '
-PS1=$STYLING$FG_COLOR$PROMPT$RESET_STYLING
+PS1='[\W]\$ '
 
 export EDITOR=$(which nvim)
 #export N_PREFIX=$HOME/.local/.n
-#export PATH=$HOME/.local/.npm-global/bin:$HOME/.local/scripts:$N_PREFIX/bin:$PATH
-export PATH="$HOME/.config/nvim/nvim-linux-x86_64/bin:$PATH"
+#export PATH=$HOME/.local/.npm-global/bin:$N_PREFIX/bin:$PATH
+export PATH="$HOME/.config/nvim/nvim-linux-x86_64/bin:$HOME/.local/scripts:$PATH"
 
-#bind -x '"\C-f":"tmux_sessionizer.sh"'
-#bind -x '"\C-t":"switch_actions.sh"'
+bind -x '"\C-f":"navigator.sh"'
+bind -x '"\C-t":"switch_actions.sh"'
 
