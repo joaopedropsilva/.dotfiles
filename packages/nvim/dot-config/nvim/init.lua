@@ -85,12 +85,13 @@ require("lazy").setup({
             build = ":TSUpdate"
         },
         {
-            "folke/tokyonight.nvim",
+            "ellisonleao/gruvbox.nvim",
             lazy = false,
             priority = 1000,
-            opts = {},
             config = function()
-                vim.cmd.colorscheme("tokyonight-night")
+                require("gruvbox").setup({ contrast = "soft" })
+                vim.o.background = "dark"
+                vim.cmd.colorscheme("gruvbox")
             end
         }
     },
